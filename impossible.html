@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html>
+<head>
+ 
+<script>
+  
+  var count =0;
+  var flag=true;
+  if(document.getElementById("autoplay").value==45)
+  
+  function dog(){
+
+if(document.getElementById("code").value==document.getElementById("water1").value){
+  document.getElementById("div1").style.visibility="hidden";
+document.getElementById("code").value="";
+count++;
+
+}
+if(document.getElementById("code").value==document.getElementById("water2").value){
+  document.getElementById("div2").style.visibility="hidden";
+document.getElementById("code").value="";
+count++;
+}
+if(document.getElementById("code").value==document.getElementById("water3").value){
+  document.getElementById("div3").style.visibility="hidden";
+document.getElementById("code").value="";
+count++;
+}
+if(document.getElementById("code").value==document.getElementById("water4").value){
+  document.getElementById("div4").style.visibility="hidden";
+document.getElementById("code").value="";
+count++;
+}
+if(document.getElementById("code").value==document.getElementById("water5").value){
+  document.getElementById("div5").style.visibility="hidden";
+document.getElementById("code").value="";
+count++;
+}
+if(count==5)
+alert();}
+
+
+</script>
+<style> 
+       
+.Wave {
+  width: 1400px;
+  height: 300px;
+  animation-name: swell;
+  animation-duration: 22s;
+  animation-fill-mode: forwards;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+  fill: #4FC3F7;
+}
+
+
+       html, body {margin: 0; height: 100%; overflow: hidden}
+     
+            
+div.dog {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  border-top-right-radius: 0;
+  transform: rotate(-45deg);
+
+  background-color: #4FC3F7;
+  position: relative;
+  animation: mymove 15s;
+  animation-fill-mode: forwards;
+}
+
+@keyframes mymove {
+  from {top: -550px;}
+  to {top: 650px;}
+  
+  
+  }
+  .buttons {
+  display: flex;
+  font-family: Helvetica;
+  font-weight: 400;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  margin: 0 auto;
+  width: 310px;
+  float: right;
+background-color: lightgray;
+}
+
+.button {
+  border: 1px solid #006494;
+  border-radius: 50px;
+  color: #006494;
+  cursor: pointer;
+  display: inline-block;
+  font-size: 26px;
+  height: 80px;
+  line-height: 80px;
+  margin: 10px;
+  text-align: center;
+  width: 80px;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+}
+
+.button:hover {
+  background-color: #006494;
+  color: #FFFFFF;
+}
+.nonButton{
+  background-color: #4FC3F7;
+  border:#4FC3F7 ;
+
+}
+
+  
+#div1 {animation-timing-function: linear;}
+#div2 {animation-timing-function: linear;}
+#div3 {animation-timing-function: linear;}
+#div4 {animation-timing-function: linear;}
+#div5 {animation-timing-function: linear;}
+
+
+div.drop-container {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  margin: auto;
+  height: 500px;
+  width: 500px;
+}
+
+
+div.drop {
+  position: absolute;
+  top: -25%;
+  width: 100%;
+  height: 100%;
+  border-radius: 100% 5% 100% 100%;
+  transform: rotate(-45deg);
+  margin: 0px;
+  background: deepskyblue;
+  animation: drip 4s forwards;
+}
+
+h1 {
+  color: white;
+  position: absolute;
+  font-size: 2.5em;
+  height: 1em;
+  top: 0; left: 0; right: 0; bottom: 0;
+  z-index: 2;
+  margin: auto;
+  text-align: center;
+  opacity: 0;
+  animation: appear 2s 2.5s forwards;
+}
+
+@keyframes appear {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+div.drop-container:before,
+div.drop-container:after {
+  content: '';
+  position: absolute;
+  z-index: -1;
+  top: 55%;
+  right: 50%;
+  transform: translate(50%) rotateX(75deg);
+  border-radius: 100%;
+  opacity: 0;
+  width: 75%;
+  height: 75%;
+  border: 5px solid skyblue;
+  animation: dripple 2s ease-out 1s;
+}
+
+div.drop-container:after {
+  animation: dripple 1s ease-out 1.7s;
+}
+
+@keyframes drip {
+  45% {
+    top: 0;
+    border-radius: 100% 5% 100% 100%;
+    transform: rotate(-45deg);
+  }
+  100% {
+    top: 0;
+    transform: rotate(0deg);
+    border-radius: 100%;
+  }
+}
+
+@keyframes dripple {
+  0% {
+    width: 150px;
+    height: 150px;
+  }
+  25% {
+    opacity: 1;
+  }
+  100% {
+    width: 500px;
+    height: 500px;
+    top: -20%;
+    opacity: 0;
+  }
+}
+</style>
+</head>
+<body >
+
+  <div class="btn-group-vertical ml-4 mt-4" style="float: right;"  role="group" aria-label="Basic example">
+    <div class="btn-group">
+        <input class="text-center form-control-lg mb-2"style="width: max-content;width: 300px;" id="code">
+    </div>
+    <div class="btn-group" >
+        <button  type="button"style="width: max-content;width: 100px; height: 100px;;" class="btn btn-outline-secondary py-3" onclick="document.getElementById('code').value=document.getElementById('code').value + '1';">1</button>
+        <button type="button"style="width: max-content;width: 100px; height: 100px;;" class="btn btn-outline-secondary py-3" onclick="document.getElementById('code').value=document.getElementById('code').value + '2';">2</button>
+        <button type="button"style="width: max-content;width: 100px; height: 100px;;" class="btn btn-outline-secondary py-3" onclick="document.getElementById('code').value=document.getElementById('code').value + '3';">3</button>
+    </div>
+    <div class="btn-group">
+        <button type="button"style="width: max-content;width: 100px; height: 100px;;" class="btn btn-outline-secondary py-3" onclick="document.getElementById('code').value=document.getElementById('code').value + '4';">4</button>
+        <button type="button"style="width: max-content;width: 100px; height: 100px;;" class="btn btn-outline-secondary py-3" onclick="document.getElementById('code').value=document.getElementById('code').value + '5';">5</button>
+        <button type="button"style="width: max-content;width: 100px; height: 100px;;" class="btn btn-outline-secondary py-3" onclick="document.getElementById('code').value=document.getElementById('code').value + '6';">6</button>
+    </div>
+    <div class="btn-group">
+        <button type="button"style="width: max-content;width: 100px; height: 100px;;" class="btn btn-outline-secondary py-3" onclick="document.getElementById('code').value=document.getElementById('code').value + '7';">7</button>
+        <button type="button"style="width: max-content;width: 100px; height: 100px;;" class="btn btn-outline-secondary py-3" onclick="document.getElementById('code').value=document.getElementById('code').value + '8';">8</button>
+        <button type="button"style="width: max-content;width: 100px; height: 100px;;" class="btn btn-outline-secondary py-3" onclick="document.getElementById('code').value=document.getElementById('code').value + '9';">9</button>
+    </div>
+    <div class="btn-group">
+        <button type="button"style="width: max-content;width: 100px; height: 100px;;" class="btn btn-outline-secondary py-3" onclick="document.getElementById('code').value=document.getElementById('code').value.slice(0, -1);">&lt;</button>
+        <button type="button"style="width: max-content;width: 100px; height: 100px;;" class="btn btn-outline-secondary py-3" onclick="document.getElementById('code').value=document.getElementById('code').value + '0';">0</button>
+        <button type="button"style="width: max-content;width: 100px; height: 100px;;" class="btn btn-primary py-3" onclick="dog();document.getElementById('code').value='';">Go</button>
+    </div>
+    <br>
+    <button style="width: 310px;height: 40px;background-color: lightsalmon;" onclick="location.reload();">try again</button>
+</div>
+
+
+<div class="dog" id="div1"  style="margin-left: 400px;"><br>	&nbsp;	&nbsp;	&nbsp;	&nbsp;	<button id="water1"value="45"class="nonButton" style="text-align: center ;
+  font-size: 25px;  transform: rotate(45deg);
+;"> 	&nbsp;5*9</button></div>
+<div class="dog" id="div2" style="margin-left: 100px;"><br>	&nbsp;	&nbsp;	&nbsp;	&nbsp;	<button id="water2" value="2"class="nonButton" style="text-align: center ;
+  font-size: 25px;  transform: rotate(45deg);
+;"> 	&nbsp;3-1</button></div>
+
+<div class="dog" id="div3"style="margin-left: 200px;"><br>	&nbsp;	&nbsp;	&nbsp;	&nbsp;	<button  id="water3" value="4"class="nonButton" style="text-align: center ;
+  font-size: 25px;  transform: rotate(45deg);
+;"> 	&nbsp;8/2</button></div>
+<div class="dog" id="div4"style="margin-left: 20px;"><br>	&nbsp;	&nbsp;	&nbsp;	&nbsp;	<button id="water4" value="0"class="nonButton" style="text-align: center ;
+  font-size: 25px;  transform: rotate(45deg);
+;"> 	&nbsp;</button></div>
+<div class="dog" id="div5"style="margin-left: 710px;"><br>	&nbsp;	&nbsp;	&nbsp;	&nbsp;	<button id="water5" value="0" class="nonButton" style="text-align: center ;
+  font-size: 25px;  transform: rotate(45deg);
+;"> 	&nbsp;</button></div>
+
+
+<div style="  width: 1500px; height: 620px;" class="Ocean">
+  
+  <svg  class="Wave" viewBox="0 0 12960 1120">
+    
+    <path d="M9720,320C8100,320,8100,0,6480,0S4860,320,3240,320,1620,0,0,0V1120H12960V0C11340,0,11340,320,9720,320Z">
+      
+        <animate 
+            dur="5s"
+            repeatCount="indefinite"
+            attributeName="d"
+            values="
+              M9720,320C8100,320,8100,0,6480,0S4860,320,3240,320,1620,0,0,0V1120H12960V0C11340,0,11340,320,9720,320Z;
+              M9720,0C8100,0,8100,319,6480,319S4860,0,3240,0,1620,320,0,320v800H12960V320C11340,320,11340,0,9720,0Z;
+              M9720,320C8100,320,8100,0,6480,0S4860,320,3240,320,1620,0,0,0V1120H12960V0C11340,0,11340,320,9720,320Z
+            "/>
+      
+    </path>
+    
+  </svg>
+  
+</div> 
+
+</body>
+<script>
+  var value3;
+  function myFunction() {
+    let value1= Math.floor((Math.random() * 10) + 47);
+    let value2= Math.floor((Math.random() * 10) + 10);
+    value3=value1*value2; 
+    
+    return value1+"*"+value2;
+
+  }
+   
+  document.getElementById("water5").innerHTML = myFunction();
+  document.getElementById("water5").value=value3;
+  document.getElementById("water2").innerHTML = myFunction();
+  document.getElementById("water2").value=value3;
+  var value6;
+  function myFunctionPlus() {
+    let value4= Math.floor((Math.random() * 10) + 63);
+    let value5= Math.floor((Math.random() * 10) + 14);
+    value6=value4+value5; 
+    
+    return value4+"+"+value5;
+
+  }
+  
+  document.getElementById("water4").innerHTML = myFunctionPlus();
+  document.getElementById("water4").value=value6;
+  document.getElementById("water1").innerHTML = myFunctionPlus();
+  document.getElementById("water1").value=value6;
+
+  var value7;
+  function myFunctionMin() {
+    let value8= Math.floor((Math.random() * 10) + 10);
+    let value9= Math.floor((Math.random() * 10) + 1);
+ 
+    value7=value8-value9; 
+   
+    return value8+"-"+value9;
+
+  }
+  
+  document.getElementById("water3").innerHTML = myFunctionMin();
+  document.getElementById("water3").value=value7;
+  
+
+ 
+  </script>
+</html>
