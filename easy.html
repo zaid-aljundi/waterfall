@@ -1,13 +1,13 @@
 <!DOCTYPE html>
 <html>
 <head>
- 
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+
 <script>
   
   var count =0;
   var flag=true;
-  if(document.getElementById("autoplay").value==45)
-  alert("adadas");
+
   function dog(){
 
 if(document.getElementById("code").value==document.getElementById("water1").value){
@@ -36,9 +36,14 @@ if(document.getElementById("code").value==document.getElementById("water5").valu
 document.getElementById("code").value="";
 count++;
 }
-if(count==5)
-alert("لقد فزت بالمسابقة , أحسنت ");}
-
+if (count == 5) {
+        Swal.fire({
+          title: 'تهانينا!',
+          text: 'لقد اجبت على الاسئلة بشكل صحيح , احسنت يا بطل',
+          icon: 'success',
+          confirmButtonText: 'المتابعة !'
+        });
+      }}
 
 </script>
 <style> 
@@ -219,9 +224,9 @@ div.drop-container:after {
 }
 </style>
 </head>
-<body >
+<body ><div>
   <img src="Service.png" alt="سحابتي" style="position: fixed; top: 0; right: 0; width: 300px; height: 200px;">
-  <br><br><br><br><br><br><br><br><br><br>
+  <br><br><br><br><br><br><br><br><br>
   <div class="btn-group-vertical ml-4 mt-4" style="float: right;"  role="group" aria-label="Basic example">
     <div class="btn-group">
         <input class="text-center form-control-lg mb-2"style="width: max-content;width: 300px;" id="code">
@@ -252,7 +257,7 @@ div.drop-container:after {
 <br>
 <button style="width: 310px;height: 40px;background-color: rgb(211, 247, 81);" onclick="location.href='index.html'">العودة</button>
 </div>
-
+</div>
 
 <div class="dog" id="div1"  style="margin-left: 400px;"><br>	&nbsp;	&nbsp;	&nbsp;	&nbsp;	<button id="water1"value="45"class="nonButton" style="text-align: center ;
   font-size: 25px;  transform: rotate(45deg);
